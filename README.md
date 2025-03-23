@@ -1,4 +1,5 @@
-**The entire process of time series prediction.**
+**The entire process of time series prediction**
+**以下为对时序数据预测的普遍流程，LSTM为例**
 
 # 使用框架版本
 python 3.9
@@ -131,7 +132,7 @@ history = model.fit(train_X, train_y, epochs=50, batch_size=36, validation_data=
 ```
 
 # 预测与评估
-+ **反归一化**：将预测结果与对应的真实值都还原为原始量纲。
++ **反归一化**：将预测结果与对应的真实值都还原为原始量纲。**注意：预测数据反归一化后，与原始数据相加时，索引应匹配，其中涉及窗口移动行/列数+差分行/列数。**
 + **评估指标**：MAE、RMSE、MAPE（平均绝对百分比误差）。
 
 ```python
